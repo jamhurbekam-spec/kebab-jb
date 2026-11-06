@@ -1,0 +1,6 @@
+{
+  "name": "KebabKu - Pengelolaan Usaha Kebab",
+  "description": "Aplikasi Android native untuk pencatatan penjualan, stok bahan baku, modal HPP, pengeluaran, dan laba rugi usaha kebab.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
