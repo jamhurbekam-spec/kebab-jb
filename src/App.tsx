@@ -12,12 +12,15 @@ import { ReportsView } from './components/ReportsView';
 import { SettingsView } from './components/SettingsView';
 import { BagiKopiModal } from './components/BagiKopiModal';
 import { GuideModal } from './components/GuideModal';
+import { InstallAppModal } from './components/InstallAppModal';
+import { InstallAppBanner } from './components/InstallAppBanner';
 
 export default function App() {
   const [appState, setAppState] = useState<AppState>(() => loadAppState());
   const [activeTab, setActiveTab] = useState<TabType>('dashboard');
   const [isBagiKopiOpen, setIsBagiKopiOpen] = useState<boolean>(false);
   const [isGuideOpen, setIsGuideOpen] = useState<boolean>(false);
+  const [isInstallModalOpen, setIsInstallModalOpen] = useState<boolean>(false);
 
   // Sync to localStorage whenever appState updates
   useEffect(() => {
@@ -214,7 +217,11 @@ export default function App() {
       businessName={appState.settings.businessName}
       onOpenBagiKopi={() => setIsBagiKopiOpen(true)}
       onOpenGuide={() => setIsGuideOpen(true)}
+      onOpenInstall={() => setIsInstallModalOpen(true)}
     >
+      {/* Install Notification Banner */}
+      <InstallAppBanner onOpenInstallModal={() => setIsInstallModalOpen(true)} />
+
       {/* Active Tab Screen Component */}
       <div className="flex-1 flex flex-col">
         {activeTab === 'dashboard' && <Dashboard appState={appState} />}
@@ -286,6 +293,12 @@ export default function App() {
       <GuideModal
         isOpen={isGuideOpen}
         onClose={() => setIsGuideOpen(false)}
+      />
+
+      {/* Install App Modal */}
+      <InstallAppModal
+        isOpen={isInstallModalOpen}
+        onClose={() => setIsInstallModalOpen(false)}
       />
     </AndroidFrame>
   );

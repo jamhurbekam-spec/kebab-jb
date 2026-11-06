@@ -1,14 +1,15 @@
 import React, { useState, useEffect } from 'react';
-import { Wifi, Battery, Smartphone, Maximize2, Minimize2, RefreshCw, Coffee, Flame, BookOpen } from 'lucide-react';
+import { Wifi, Battery, Smartphone, Maximize2, Minimize2, RefreshCw, Coffee, Flame, BookOpen, Download } from 'lucide-react';
 
 interface AndroidFrameProps {
   children: React.ReactNode;
   businessName: string;
   onOpenBagiKopi?: () => void;
   onOpenGuide?: () => void;
+  onOpenInstall?: () => void;
 }
 
-export const AndroidFrame: React.FC<AndroidFrameProps> = ({ children, businessName, onOpenBagiKopi, onOpenGuide }) => {
+export const AndroidFrame: React.FC<AndroidFrameProps> = ({ children, businessName, onOpenBagiKopi, onOpenGuide, onOpenInstall }) => {
   const [currentTime, setCurrentTime] = useState<string>('');
   const [isOnline, setIsOnline] = useState<boolean>(navigator.onLine);
   const [isPhoneFrame, setIsPhoneFrame] = useState<boolean>(true);
@@ -117,6 +118,18 @@ export const AndroidFrame: React.FC<AndroidFrameProps> = ({ children, businessNa
           </div>
 
           <div className="flex items-center gap-1.5">
+            {/* Install App Button */}
+            {onOpenInstall && (
+              <button
+                onClick={onOpenInstall}
+                className="flex items-center gap-1 bg-amber-500/25 hover:bg-amber-500/40 text-amber-200 border border-amber-400/40 font-bold text-[10px] px-2.5 py-1.5 rounded-full transition cursor-pointer active:scale-95"
+                title="Pasang Aplikasi KebabKu di Layar HP"
+              >
+                <Download className="w-3 h-3 text-amber-300" />
+                <span>Install</span>
+              </button>
+            )}
+
             {/* Panduan Button */}
             <button
               onClick={onOpenGuide}

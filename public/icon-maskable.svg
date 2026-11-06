@@ -1,0 +1,57 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512">
+  <defs>
+    <linearGradient id="maskbg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#b71c1c"/>
+      <stop offset="50%" stop-color="#991b1b"/>
+      <stop offset="100%" stop-color="#450a0a"/>
+    </linearGradient>
+    <linearGradient id="pita2" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#fef08a"/>
+      <stop offset="50%" stop-color="#fde047"/>
+      <stop offset="100%" stop-color="#eab308"/>
+    </linearGradient>
+    <linearGradient id="flame2" x1="0%" y1="100%" x2="0%" y2="0%">
+      <stop offset="0%" stop-color="#ef4444"/>
+      <stop offset="50%" stop-color="#f97316"/>
+      <stop offset="100%" stop-color="#facc15"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Full-bleed background for maskable (no rounded rect to avoid transparent corners when cropped) -->
+  <rect width="512" height="512" fill="url(#maskbg)"/>
+
+  <!-- Centered inside 80% safe zone (safe area is between 51px and 461px) -->
+  <g transform="translate(51, 51) scale(0.8)">
+    <!-- Decorative Outer Glow Ring -->
+    <circle cx="256" cy="256" r="185" fill="none" stroke="#f59e0b" stroke-width="6" stroke-opacity="0.25"/>
+
+    <!-- Back flame -->
+    <path d="M256 95 C280 140 330 180 320 230 C310 280 256 310 256 310 C256 310 202 280 192 230 C182 180 232 140 256 95 Z" fill="url(#flame2)" opacity="0.9"/>
+
+    <!-- Outer Tortilla wrap -->
+    <path d="M190 390 L160 270 Q150 210 200 180 L310 180 Q360 210 350 270 L322 390 Q256 425 190 390 Z" fill="url(#pita2)"/>
+    
+    <!-- Tortilla fold / overlap -->
+    <path d="M175 250 Q256 295 337 250 L322 390 Q256 425 190 390 Z" fill="#fef9c3" opacity="0.95"/>
+    <path d="M210 396 L290 265" stroke="#ca8a04" stroke-width="5" stroke-linecap="round"/>
+    
+    <!-- Grill marks -->
+    <line x1="210" y1="310" x2="270" y2="330" stroke="#b45309" stroke-width="5" stroke-linecap="round" opacity="0.7"/>
+    <line x1="230" y1="345" x2="290" y2="365" stroke="#b45309" stroke-width="5" stroke-linecap="round" opacity="0.7"/>
+
+    <!-- Fillings -->
+    <path d="M175 210 Q190 165 215 185 Q235 155 255 180 Q275 155 295 185 Q325 165 335 210 Q256 230 175 210 Z" fill="#22c55e"/>
+    <ellipse cx="230" cy="195" rx="22" ry="12" fill="#7f1d1d" transform="rotate(-15 230 195)"/>
+    <ellipse cx="282" cy="195" rx="22" ry="12" fill="#881337" transform="rotate(15 282 195)"/>
+    <ellipse cx="256" cy="180" rx="24" ry="13" fill="#991b1b"/>
+
+    <!-- Sauces -->
+    <path d="M220 185 Q235 215 245 195 Q260 225 275 190 Q290 215 300 190" fill="none" stroke="#fef08a" stroke-width="6" stroke-linecap="round"/>
+    <path d="M210 195 Q230 220 240 205 Q255 235 270 200 Q285 220 295 205" fill="none" stroke="#dc2626" stroke-width="5" stroke-linecap="round"/>
+
+    <!-- KEBABKU text -->
+    <text x="256" y="458" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="44" font-weight="900" fill="#ffffff" text-anchor="middle" letter-spacing="2">
+      KEBABKU
+    </text>
+  </g>
+</svg>
